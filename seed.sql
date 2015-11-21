@@ -1,0 +1,1 @@
+INSERT into element_types (name, description) VALUES ("Text", "A place to put your thoughts."),("Image", "A pretty picture."),("Title", "What are we calling this thing?"),("Nav", "A way to get around.");

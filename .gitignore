@@ -1,0 +1,5 @@
+default.conf.py
+.idea
+*.db
+*.pyc
+client_secrets.json

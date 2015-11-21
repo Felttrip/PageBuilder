@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>API Key: {{res.api_key}}</h1>
+<h2>Try Some Routes:</h2>
+<ul>
+    <li>GET /api/site/1/pages (Get all pages) <button onclick="getPages();">Click Me</button> </li>
+    <li>GET /api/site/1/page/:id (Get a specific page) <button onclick="getPage1();">Get Page with Id:</button><input id = "getPageNumber"/></li>
+    <li>POST /api/site/1/pages (Create a new page)<button onclick="createPage1();">Make Page</button></li>
+    <li>PUT /api/site/1/page/:id (Update a specific page) <button onclick="updatePage1();">Update Page with Id:</button><input id = "updatePageNumber"/></li>
+    <li>DELETE /api/site/1/page/:id (Delete a specific page)<button onclick="deletePage1();">Delete Page with Id:</button><input id = "deletePageNumber"/></li>
+</ul>
+<button><a href="/logout">Logout</a></button>
+
+<pre>
+
+<div id = "result"></div>
+</pre>
+</div>
+{% endblock %}
+{% block footer %}
+{{ super() }}
+<script>
+function getPages(){
+    $.ajax({
+        type: "GET",
+        url: "/api/site/1/pages",
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", '{{res.api_key}}');
+        },
+        success: function(data) {
+            $("#result").html(JSON.stringify(data, null, 2));
+        },
+        error: function(data) {
+            $("#result").html(JSON.stringify(data, null, 2));
+        }
+    });
+}
+
+function getPage1(){
+    $.ajax({
+        type: "GET",
+        url: "/api/site/1/page/"+$('#getPageNumber').val(),
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", '{{res.api_key}}');
+        },
+        success: function(data) {
+            $("#result").html(JSON.stringify(data, null, 2));
+        },
+        error: function(data) {
+            $("#result").html(JSON.stringify(data, null, 2));
+        }
+    });
+}
+
+function createPage1(){
+    var page = {
+    "name": "A New Page",
+    "order": 1,
+    "elements": [
+                    {
+                        "type": "Text",
+                        "content": "Hello!"
+                    },
+                    {
+                        "type": "Image",
+                        "content": "some/url/image.png"
+                    }
+        ]
+
+    }
+    $.ajax({
+        type: "POST",
+        url: "/api/site/1/pages",
+        data: JSON.stringify(page),
+        contentType: 'application/json',
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", '{{res.api_key}}');
+        },
+        success: function(data) {
+            $("#result").html(JSON.stringify(data, null, 2));
+        },
+        error: function(data) {
+            $("#result").html(JSON.stringify(data, null, 2));
+        }
+    });
+}
+
+function updatePage1(){
+    var page = {
+    "name": "A New Page",
+    "order": 1,
+    "elements": [
+                    {
+                        "type": "Text",
+                        "content": "Hello!"
+                    }
+        ]
+
+    }
+    $.ajax({
+        type: "PUT",
+        url: "/api/site/1/page/"+$('#updatePageNumber').val(),
+        data: JSON.stringify(page),
+        contentType: 'application/json',
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", '{{res.api_key}}');
+        },
+        success: function(data) {
+            $("#result").html(JSON.stringify(data, null, 2));
+        },
+        error: function(data) {
+            $("#result").html(JSON.stringify(data, null, 2));
+        }
+    });
+}
+
+function deletePage1(){
+    $.ajax({
+        type: "DELETE",
+        url: "/api/site/1/page/"+$('#deletePageNumber').val(),
+        contentType: 'application/json',
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", '{{res.api_key}}');
+        },
+        success: function(data) {
+            $("#result").html(JSON.stringify(data, null, 2));
+        },
+        error: function(data) {
+            $("#result").html(JSON.stringify(data, null, 2));
+        }
+    });
+}
+</script>
+{% endblock %}

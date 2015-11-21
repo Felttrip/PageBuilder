@@ -1,0 +1,165 @@
+body {
+    padding-top: 50px;
+    font-family: ProximaNova-Sbold;
+
+}
+
+.navbar{
+ background-color: #518dca;
+ box-shadow: 0 4px 2px -2px black;
+
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #2c3e50;
+}
+
+.sidebar-section {
+    background-color: #4f657b;
+    height: 35px;
+    padding: 10px;
+    color: #9cb3ca;
+    font-family: ProximaNova-Sbold;
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+    -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+
+#page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 235px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#wrapper {
+    padding-left: 235px;
+}
+
+#sidebar-wrapper {
+    width: 235px;
+    font-family: ProximaNova-Sbold;
+
+}
+
+.nav-pills >li >a {
+    color: #ffffff;
+    background-color: #518dca;
+    width: 172px;
+    margin-left: 32px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.page-tab{
+}
+
+.elements{
+    height: 117px;
+    width: 117px;
+    border-style: solid;
+    border-width: 1px;
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+    -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+.left-elements{
+    margin-left: 15px;
+}
+
+.divider{
+    border-color: #21313f;
+    border-top: 2px solid;
+    box-shadow: 0 4px 2px -2px black;
+
+}
+@font-face {
+    font-family: ProximaNova-Sbold;
+    src: url(/static/fonts/ProximaNova-Sbold.otf);
+}
+
+.toggle-icon-on{
+    display: block;
+    background: url(/static/images/Toggle-Switch.png);
+    background-position: -6px -55px;
+    width: 55px;
+    height: 25px;
+
+}
+
+.weebly-icon{
+    display: block;
+    background: url(/static/images/Element-Icons.png);
+}
+
+.title-icon {
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    width: 55px;
+    height: 58px;
+    background-position: -8px -6px;
+
+}
+.text-icon {
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    width: 55px;
+    height: 58px;
+    background-position: -62px -6px;
+
+}
+.image-icon {
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    width: 55px;
+    height: 58px;
+    background-position: -115px -6px;
+
+}
+.nav-icon {
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    width: 55px;
+    height: 58px;
+    background-position: -170px -6px;
+
+}
+
+.icon-label {
+    margin-left: 23px;
+    color: #5e768e;
+    font-family: ProximaNova-Sbold;
+
+}
+
+.settings{
+    padding-top: 15px;
+    padding-left: 35px;
+    color: #5e768e;
+
+}
+
+.settings-text{
+    padding-top: 4px;
+}
+
+
+

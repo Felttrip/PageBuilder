@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block head%}
+    {{ super() }}
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link href="static/css/google-style.css" rel="stylesheet">
+{% endblock%}
+{% block content %}
+<div class = "row">
+    <div class = "col-xs-4 col-xs-offset-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">Log in with Google</div>
+            <div class="panel-body">
+                <div onclick="location.href='{{ res.oauth_url}}'" id="gSignInWrapper">
+                    <span class="label">Sign in with:</span>
+                        <div id="customBtn" class="customGPlusSignIn">
+                            <span class="icon"></span>
+                            <span class="buttonText">Google</span>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
